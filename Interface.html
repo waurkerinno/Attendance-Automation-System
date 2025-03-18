@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: #333;
+            color: white;
+        }
+        .nav-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .nav-buttons button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .nav-buttons button:hover {
+            background: #0056b3;
+        }
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 10s linear infinite;
+        }
+        @keyframes marquee {
+            from { transform: translateX(0%); }
+            to { transform: translateX(-100%); }
+        }
+    </style>
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Attendance System Dashboard</h1>
+    </div>
+    <div class="nav-buttons">
+        <button onclick="scrollToSection('admin-panel')">Admin Panel</button>
+        <button onclick="scrollToSection('lecturer-panel')">Lecturer Panel</button>
+        <button onclick="scrollToSection('student-panel')">Student Panel</button>
+    </div>
+    <div class="container">
+        <div class="dashboard">
+            <div class="card" id="admin-panel">
+                <h2>Admin Panel</h2>
+                <div class="marquee"><span>System Status: Online | Total Users: 1250 | Active Users: 1180 | Total Classes: 45 | Active Classes: 38</span></div>
+                <p>Manage Users & Reports</p>
+                <table>
+                    <tr>
+                        <th>User</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>Lecturer</td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>Student</td>
+                        <td>Inactive</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card" id="lecturer-panel">
+                <h2>Lecturer Panel</h2>
+                <p>View & Mark Attendance</p>
+                <table>
+                    <tr>
+                        <th>Course</th>
+                        <th>Date</th>
+                        <th>Attendance Marked</th>
+                    </tr>
+                    <tr>
+                        <td>Computer Science</td>
+                        <td>March 18, 2025</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Mathematics</td>
+                        <td>March 18, 2025</td>
+                        <td>No</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card" id="student-panel">
+                <h2>Student Panel</h2>
+                <p>Check Attendance Records</p>
+                <table>
+                    <tr>
+                        <th>Course</th>
+                        <th>Time</th>
+                        <th>Absences</th>
+                    </tr>
+                    <tr>
+                        <td>Physics</td>
+                        <td>10:00 AM</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>English</td>
+                        <td>1:00 PM</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
